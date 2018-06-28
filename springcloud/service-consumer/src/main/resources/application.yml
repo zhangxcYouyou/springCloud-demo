@@ -24,6 +24,6 @@ eureka:
       test-metadata: first mircroservice
 
 # 改变负载均衡的规则（一般情况下不需要改变）
-microservce-service-provider:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#microservce-service-provider:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
