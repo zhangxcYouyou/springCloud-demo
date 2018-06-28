@@ -15,6 +15,15 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://admin:admin@peer1:8761/eureka/,http://admin:admin@peer2:8762/eureka/
+
   instance:
     prefer-ip-address: true
+    metadata-map:
+      # 测试元数据
+      test-metadata: first mircroservice
+
+# 改变负载均衡的规则（一般情况下不需要改变）
+microservce-service-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
