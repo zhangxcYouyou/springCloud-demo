@@ -20,6 +20,13 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      # defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+      defaultZone: http://admin:admin@peer1:8761/eureka/,http://admin:admin@peer2:8762/eureka/
+    healthcheck:
+      enabled:  true
+
   instance:
     prefer-ip-address: true
+    metadata-map:
+      # 测试元数据
+      test-metadata: first mircroservice
