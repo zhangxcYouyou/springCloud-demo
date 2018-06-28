@@ -22,8 +22,6 @@ eureka:
     service-url:
       # defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
       defaultZone: http://admin:admin@peer1:8761/eureka/,http://admin:admin@peer2:8762/eureka/
-    healthcheck:
-      enabled:  true
 
   instance:
     prefer-ip-address: true

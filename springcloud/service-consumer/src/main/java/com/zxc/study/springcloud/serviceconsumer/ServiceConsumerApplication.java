@@ -2,23 +2,28 @@ package com.zxc.study.springcloud.serviceconsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class ServiceConsumerApplication {
-    /**
-     * @author zhangxianchao
-     * @Descriptiion  定义RestTemplate 对象
-     * @Date 2018/6/27 0027 15:16
-     * @Param []
-     * @return org.springframework.web.client.RestTemplate
-     */
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
     public static void main(String[] args) {
         SpringApplication.run(ServiceConsumerApplication.class, args);
+    }
+
+    /**
+     * @return org.springframework.web.client.RestTemplate
+     * @author zhangxianchao
+     * @Descriptiion 定义RestTemplate 对象
+     * @Date 2018/6/27 0027 15:16
+     * @Param []
+     */
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
