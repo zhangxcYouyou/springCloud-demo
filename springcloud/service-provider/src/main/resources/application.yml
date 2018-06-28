@@ -6,14 +6,13 @@ logging:
     root: TRACE
 
 ## INFO
-info:
-  app:
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@
-
+#info:
+#  app:
+#    name: @project.artifactId@
+#    encoding: @project.build.sourceEncoding@
+#    java:
+#      source: @java.version@
+#      target: @java.version@
 
 spring:
   application:
